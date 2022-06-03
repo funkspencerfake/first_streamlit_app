@@ -9,6 +9,6 @@ streamlit.text(':salad: Kale, Spinach and Rocket SMoothie')
 streamlit.text(':chicken: Hard-Boiled Free-Range Egg')
 
 
-my_fruit_list = pd.read_csv(https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt)
+my_fruit_list = pd.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')
 
 streamlit.dataframe(my_fruit_list)
