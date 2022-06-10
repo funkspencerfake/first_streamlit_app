@@ -39,9 +39,6 @@ try:
     #output it on the screen as a table
     streamlit.dataframe(back_from_function)
 
-    
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
 #streamlit.write('The user entered', fruit_choice)
 
 except URLError as e:
@@ -57,7 +54,7 @@ except URLError as e:
 
 streamlit.header("The fruit load list contains:")
 def get_fruit_load_list():
-    with my_cnx.cursor():
+    with my_cnx.cursor() as my_cur:
         my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.fruit_load_list")
         return my_cur.fetchall()
 
