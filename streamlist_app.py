@@ -40,7 +40,8 @@ try:
     streamlit.dataframe(back_from_function)
 
     
-
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
 #streamlit.write('The user entered', fruit_choice)
 
 except URLError as e:
